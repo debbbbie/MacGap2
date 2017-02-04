@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XcodeCleaner</title>
+    <meta charset="utf-8">
+
+    <link href="index.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" style="text-align: center;">
+    <h1>欢迎使用 XcodeCleaner</h1>
+    <button type="button" class=" btn btn-primary" id='btn-saomiao'>扫 描</button>
+
+</div>
+
+<div class="container">
+    <section id="active-tasks">
+        <div class="section-header">
+            <i class="icon-chevron-down glyphicon glyphicon-chevron-down"></i><b>Platforms (仅需移除不需要的，如 AppleTVOS.platform)</b>
+        </div>
+        <ul class="tasks-table" id="active-tasks-table">
+            <li>
+                <div class="empty-tasks">
+                    <strong>无</strong>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="aaatasks">
+        <div class="section-header">
+            <i class="icon-chevron-down glyphicon glyphicon-chevron-down"></i><b>Runtimes</b>
+        </div>
+        <ul class="tasks-table" id="active-tasks-table2">
+            <li>
+                <div class="empty-tasks">
+                    <strong>暂无</strong>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<script id="other-task-tpl" type="text/html">
+    {{each tasks as task i}}
+    <li class="task">
+        <div class="left-area">
+            <div class="task-name">
+                <i class="select-box glyphicon glyphicon-ok"></i>
+                <span title="{{task.title}}">{{task.title}}</span>
+                <div class="finder-desc pull-right" style="color: gray;">{{task.path}}</div>
+            </div>
+        </div>
+        <div class="right-area">
+            <div class="pull-right">
+                 <span style="cursor: default;">
+                     <i class="glyphicon glyphicon-search finder" title="在 Finder 中显示" data-toggle="tooltip"></i> {{task.size}}
+                 </span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </li>
+    {{/each}}
+</script>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/art-template.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

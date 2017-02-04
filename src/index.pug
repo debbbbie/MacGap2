@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    title XcodeCleaner
+    meta(charset='utf-8')
+    link(href='index.css', rel='stylesheet')
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/bootstrap-theme.min.css', rel='stylesheet')
+    link(href='css/main.css', rel='stylesheet')
+  body(style="overflow:scroll")
+    .container.div-init(style='text-align: center; display: table;height: 100%;')
+      .row(style="vertical-align: middle; display: table-cell")
+        h1 欢迎使用 XcodeCleaner
+        button#btn-scan.btn.btn-primary(type='button') 开始扫描 
+
+    .container.div-result(style="display: none")
+      header.main-head.page-header(
+          style="width:100%;top:0;position:relative;background:white;z-index:100;margin: 0 0 0 0; padding-left:10px;"
+          data-spy="affix" data-offset-top="10"
+      )
+        h1(style="text-align:left; width:100%;")
+          span XcodeCleaner
+          span.op-clear.pull-right(style="display:none;font-size:14px;margin-right:10px;")
+            button#btn-clear.btn.btn-primary(type='button') 
+              i.glyphicon.glyphicon-play-circle
+              span &nbsp;开始清理 
+            span.select-status
+      //-   div(style="height:60px")
+
+
+      section#active-tasks
+        .section-header
+          i.icon-chevron-down.glyphicon.glyphicon-chevron-down
+          b 
+            span Platforms 
+            i.glyphicon.glyphicon-question-sign(data-toggle="tooltip" title="仅需移除不需要的，如 AppleTVSimulator.platform")
+        ul.tasks-table.platforms
+          li: .empty-tasks: strong 暂无
+      section#active-tasks
+        .section-header
+          i.icon-chevron-down.glyphicon.glyphicon-chevron-down
+          b Runtimes
+        ul.tasks-table.runtimes
+          li: .empty-tasks: strong 暂无
+    script      
+    script#task-tpl(type='text/html').
+      {{each tasks as task i}}
+      <li class="task" data-dirname="{{task.title}}">
+          <div class="left-area">
+              <div class="task-name">
+                  <i class="select-box glyphicon"></i>
+                  <span title="{{task.title}}">{{task.title}}</span>
+                  <div class="finder-desc pull-right" style="color: gray;">
+                      {{task.path}}
+                      <i class="glyphicon glyphicon-search finder" title="在 Finder 中显示" data-toggle="tooltip"></i> 
+                  </div>
+              </div>
+          </div>
+          <div class="right-area">
+              <div class="pull-right">
+                  <span style="cursor: default;">
+                      <span class="size_display"><i class="glyphicon glyphicon-refresh glyphicon-spin"></i>{{task.size}}</span>
+                  </span>
+              </div>
+              <div class="clearfix"></div>
+          </div>
+      </li>
+      {{/each}}
+
+    script(src='js/jquery-3.1.1.min.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/art-template.js')
+    script(src='index.js')

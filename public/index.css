@@ -1,0 +1,89 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+}
+
+h1 {
+    color: #E0E0E0;
+    margin: 18% 0;
+    text-align: center;
+    font-family: helvetica;
+}
+
+.select-box{
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.tasks-table {
+    padding: initial !important;
+}
+
+.task .task-name {
+    cursor: initial !important;
+}
+
+#active-tasks .right-area {
+    width: 100px !important;
+}
+
+#active-tasks .left-area {
+    margin-right: 100px !important;
+}
+
+.finder-desc {
+    display: none;
+    cursor: default;
+}
+
+.task:hover .finder-desc {
+    display: block;
+}
+
+.finder {
+    cursor: pointer;
+    display: none !important;
+}
+.task:hover .finder {
+    display: inline-block !important;
+}
+
+.tooltip-inner {
+    max-width: 650px !important;
+}
+
+#aaatasks {
+    margin-top: 40px;
+}
+
+
+.fa-spin-custom, .glyphicon-spin {
+    -webkit-animation: spin 2000ms infinite linear;
+    animation: spin 2000ms infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}

@@ -1,2 +1,4 @@
 public/status.png
 .DS_Store
+node_modules/
+.vscode/

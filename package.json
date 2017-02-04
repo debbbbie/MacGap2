@@ -1,0 +1,36 @@
+{
+  "name": "xcode-cleaner",
+  "version": "0.1.0",
+  "description": "xcode cleaner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "watch:pug": "watch 'npm run build:pug' src",
+    "build:pug": "pug -P -o public src/*.pug",
+    
+    "watch:coffee": "watch 'npm run build:coffee' src",
+    "build:coffee": "coffee -o public src/*.coffee",
+    
+    "watch": "npm run watch:pug & npm run watch:coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debbbbie/XcodeCleaner.git"
+  },
+  "keywords": [
+    "xcode-cleaner"
+  ],
+  "author": "debbbbie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/debbbbie/XcodeCleaner/issues"
+  },
+  "homepage": "https://github.com/debbbbie/XcodeCleaner#readme",
+  "devDependencies": {
+    "pug": "^2.0.0-beta6",
+    "pug-cli": "^1.0.0-alpha6",
+    "watch": "^1.0.1",
+    "watchify": "^3.8.0"
+  }
+}
